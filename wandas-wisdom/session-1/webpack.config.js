@@ -8,6 +8,25 @@ module.exports = {
 		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist')
 	},
+    module: {
+        rules: [
+            {
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: true,
+                    }
+                },
+                exclude: /node_modules/,
+            }
+        ],
+    },
+    resolve: {
+        extensions: [ '.ts', '.js' ],
+        extensionAlias: {
+            '.ts': [ '.js', '.ts' ]
+        }
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),

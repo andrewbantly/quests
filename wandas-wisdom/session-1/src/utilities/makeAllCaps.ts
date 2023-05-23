@@ -1,4 +1,4 @@
-function makeAllCaps(words) {
+function makeAllCaps(words : string): string {
     const capsWords = words.toUpperCase()
 
     return capsWords
